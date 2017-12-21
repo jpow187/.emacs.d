@@ -165,14 +165,6 @@ Clean up the GUI. Eliminate unecesary tools
 
 Packages from ELPA
 
-** Ag
-
-#+BEGIN_SRC emacs-lisp
-(use-package ag
-  :ensure t
-  :commands ag)
-#+END_SRC
-
 ** Ace Jump Mode
 
 A quick way to jump around text in buffers.
@@ -352,14 +344,6 @@ CC Mode is a powerful package that provides modes for editing C and C-like (C++,
 
 #+END_SRC
 
-** Clojure
-
-#+begin_src emacs-lisp
-(use-package clojure-mode
-  :defer t
-  :ensure t)
-#+end_src
-
 ** Evil Mode
 
 #+begin_src emacs-lisp
@@ -427,11 +411,13 @@ it.
 
 iBuffer is an improved version of list-buffer
 
-#+BEGIN_SRC 
+#+BEGIN_SRC emacs-lisp
+
 (defalias 'list-buffers 'ibuffer)
 (add-hook 'dired-mode-hook 'auto-revert-mode)
 (setq global-auto-revert-non-file-buffers 1)
 (setq auto-revert-verbose nil)
+
 #+END_SRC
 
 ** Macrostep
@@ -487,11 +473,13 @@ No more juggling windows after commiting. It's magit bliss.
 
 ** Markdown mode
 
-#+begin_src
+#+begin_src emacs-lisp
+
 (use-package markdown-mode
   :ensure t
   :mode (("\\.markdown\\'" . markdown-mode)
          ("\\.md\\'"       . markdown-mode)))
+
 #+end_src
 
 ** Multiple cursors

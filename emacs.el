@@ -1,4 +1,3 @@
-
 (setq user-full-name "Jordan Powell")
 
 (defalias 'yes-or-no-p 'y-or-n-p)
@@ -53,10 +52,6 @@
 
 (setq inhibit-startup-message 1)
 (setq initial-scratch-message "")
-
-(use-package ag
-  :ensure t
-  :commands ag)
 
 (use-package ace-jump-mode
   :ensure t 
@@ -201,10 +196,6 @@
      (c-special-indent-hook . c-gnu-impose-minimum)
      (c-block-comment-prefix . ""))))
 
-(use-package clojure-mode
-  :defer t
-  :ensure t)
-
 (use-package evil
   :ensure t
   :config
@@ -238,6 +229,11 @@
          ("M-x" . helm-M-x)
          ("C-x C-f" . helm-find-files)))
 
+(defalias 'list-buffers 'ibuffer)
+(add-hook 'dired-mode-hook 'auto-revert-mode)
+(setq global-auto-revert-non-file-buffers 1)
+(setq auto-revert-verbose nil)
+
 (use-package macrostep
   :ensure t
   :bind ("C-h e" . macrostep-expand)
@@ -254,6 +250,11 @@
   (interactive)
   (kill-buffer)
   (jump-to-register :magit-fullscreen))
+
+(use-package markdown-mode
+  :ensure t
+  :mode (("\\.markdown\\'" . markdown-mode)
+         ("\\.md\\'"       . markdown-mode)))
 
 (require 'use-package)
 (use-package neotree
