@@ -4,9 +4,9 @@
 (setq package-archives
       '(("gnu" . "http://elpa.gnu.org/packages/")
         ("original" . "http://tromey.com/elpa/")
-	("org"      . "http://orgmode.org/elpa/")
-;;	("marmalade" . "http://marmalade-repo.org/packages/")
-	("melpa" . "http://melpa.milkbox.net/packages/")))
+	      ("org"      . "http://orgmode.org/elpa/")
+;;	    ("marmalade" . "http://marmalade-repo.org/packages/")
+	      ("melpa-stable" . "http://stable.melpa.org/packages/")))
 
 (package-initialize)
 ;;check if packages are up-to-date; if not, it will update them

@@ -44,7 +44,7 @@
 (bind-key "C-<f12>" 'switch-theme)
 
 (column-number-mode 1)
-(global-linum-mode 1)
+(global-linum-mode 0)
 
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
@@ -204,7 +204,7 @@
 (use-package flycheck
   :ensure t
   :defer 10
-  :config (setq flycheck-html-tidy-executable "tidy5"))
+  :commands flycheck-mode )
 
 (use-package helm
   :ensure t
@@ -238,6 +238,10 @@
   :ensure t
   :bind ("C-h e" . macrostep-expand)
         ("C-h c" . macrostep-collapse))
+
+(use-package magit
+  :ensure t
+  :bind ("C-c g" . magit-status))
 
 ;; full screen magit-status
 (defadvice magit-status (around magit-fullscreen activate)

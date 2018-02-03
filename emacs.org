@@ -144,7 +144,7 @@ Show column number
 
 #+BEGIN_SRC emacs-lisp
 (column-number-mode 1)
-(global-linum-mode 1)
+(global-linum-mode 0)
 #+END_SRC
 
 *** Clean Interface
@@ -162,7 +162,7 @@ Clean up the GUI. Eliminate unecesary tools
 #+END_SRC
 
 * Packages
-
+	
 Packages from ELPA
 
 ** Ace Jump Mode
@@ -375,7 +375,7 @@ it.
 (use-package flycheck
   :ensure t
   :defer 10
-  :config (setq flycheck-html-tidy-executable "tidy5"))
+  :commands flycheck-mode )
 #+end_src
 
 ** Helm
@@ -438,13 +438,10 @@ A great interface for git projects. It's much more pleasant to use
 than the git interface on the command line. Use an easy keybinding to
 access magit.
 
-#+begin_src 
+#+begin_src emacs-lisp 
 (use-package magit
   :ensure t
-  :defer t
-  :bind ("C-c g" . magit-status)
-  :config
-  (define-key magit-status-mode-map (kbd "q") 'magit-quit-session))
+  :bind ("C-c g" . magit-status))
 #+end_src
 
 *** Fullscreen magit
@@ -762,4 +759,7 @@ This section will create a custom file "custom.el" that will store custom variab
 (load custom-file)
 #+end_src
  
-
+* Language Agnostic
+** C/C++
+*** Keybindings
+** 
