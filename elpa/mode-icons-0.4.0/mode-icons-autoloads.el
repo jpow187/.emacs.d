@@ -3,8 +3,8 @@
 ;;; Code:
 (add-to-list 'load-path (or (file-name-directory #$) (car load-path)))
 
-;;;### (autoloads nil "mode-icons" "mode-icons.el" (23305 5250 761241
-;;;;;;  92000))
+;;;### (autoloads nil "mode-icons" "mode-icons.el" (23305 7776 318912
+;;;;;;  999000))
 ;;; Generated autoloads from mode-icons.el
 
 (defvar mode-icons-mode nil "\
@@ -23,8 +23,8 @@ Replace the name of the current major mode with an icon.
 
 ;;;***
 
-;;;### (autoloads nil nil ("mode-icons-pkg.el") (23305 5250 774262
-;;;;;;  757000))
+;;;### (autoloads nil nil ("mode-icons-pkg.el") (23305 7776 334297
+;;;;;;  601000))
 
 ;;;***
 

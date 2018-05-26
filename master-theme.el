@@ -202,12 +202,6 @@
 ;;`(helm-source-go-package-godoc-description ((t (:foreground ,str))))
 ;;`(helm-bookmark-w3m ((t (:foreground ,type))))
 
- ;;===========================undo-tree =======================================
- ;; `(undo-tree-visualizer-current-face ((t :foreground ,builtin)))
- ;; `(undo-tree-visualizer-default-face ((t :foreground ,fg2)))
- ;; `(undo-tree-visualizer-unmodified-face ((t :foreground ,var)))
- ;; `(undo-tree-visualizer-register-face ((t :foreground ,type)))
-
 
 
 

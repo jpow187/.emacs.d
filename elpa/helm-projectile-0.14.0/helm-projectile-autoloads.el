@@ -4,7 +4,7 @@
 (add-to-list 'load-path (or (file-name-directory #$) (car load-path)))
 
 ;;;### (autoloads nil "helm-projectile" "helm-projectile.el" (23305
-;;;;;;  5229 929139 323000))
+;;;;;;  7764 330849 703000))
 ;;; Generated autoloads from helm-projectile.el
 
 (defvar helm-projectile-fuzzy-match t "\
