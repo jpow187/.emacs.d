@@ -31,17 +31,6 @@ Turn off blinking cursor
 
 ** Backups
 
-Store all your backup files into one folder (file.ext~).
-It will delete the old copy when it creates a new copy.
-It will also delete the backup one week after its created.
-Don't Forget to create a backup and and auto-save-list directory.
-Store all your auto-save files into one folder.
-#+BEGIN_SRC 
-(setq backup-directory-alist
-    `((".*" . ,temporary-file-directory)))
-(setq auto-save-file-name-transforms
-    `((".*" ,temporary-file-directory t)))
-#+END_SRC
 
 ** Text Related Customizations
 *** Parenthesis Mode
@@ -116,6 +105,14 @@ Turns off the beep when you press and incorrect key
 #+END_SRC
 
 * Themes
+** Theme
+
+#+BEGIN_SRC emacs-lisp 
+ 
+(load-theme 'master t)
+
+#+END_SRC
+
 ** Fonts
 Load preferred font on startup with a specified font size
 
@@ -149,7 +146,6 @@ Clean up the GUI. Eliminate unecesary tools
 #+END_SRC
 
 * Major Modes
-	
 Packages from ELPA
 ** Ace Window
 
@@ -178,7 +174,20 @@ what I have them set to (with respect to Dvorak, of course).
   :ensure t
   :config
   (evil-mode 1))
-#+end_src
+#+end_src 
+
+*** Undo Tree
+Undo Tree is required for evil to work properly
+#+BEGIN_SRC emacs-lisp
+(use-package undo-tree
+  :ensure t
+  :bind
+  (("C-S-z" . undo-tree-redo)
+   ("C-z" . undo-tree-undo))
+  :init
+  (global-undo-tree-mode))
+
+#+END_SRC
 
 ** Flycheck
 

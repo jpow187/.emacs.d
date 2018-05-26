@@ -1,3 +1,5 @@
+;;;Master Theme for my emacs configuration. Easy on the eyes.
+
 (deftheme master "One Theme to Rule Them ALL")
 
 ;;;let variables surround the custom-theme-set-face

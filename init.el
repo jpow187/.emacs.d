@@ -30,8 +30,8 @@
     (require 'diminish)
     (require 'bind-key)))
 
-
-(load-theme 'master t)
+;;Set backup folder
+(setq backup-directory-alist `(("." . "~/.saves")))
 ;;Generate compiled lisp code. To improve emacs startup/efficiency
 ;; (use-package auto-compile
 ;;    :ensure t

@@ -30,6 +30,8 @@
   (setq timestamp (format-time-string "(%d-%b-%y)"))
   (insert (format ";; jdp %s: " timestamp)))
 
+(load-theme 'master t)
+
 (set-default-font "Nimbus Mono L Bold 14")
 
 (column-number-mode 1)
@@ -56,6 +58,14 @@
   :ensure t
   :config
   (evil-mode 1))
+
+(use-package undo-tree
+  :ensure t
+  :bind
+  (("C-S-z" . undo-tree-redo)
+   ("C-z" . undo-tree-undo))
+  :init
+  (global-undo-tree-mode))
 
 (use-package helm
   :ensure t
