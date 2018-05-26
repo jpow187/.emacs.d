@@ -30,6 +30,7 @@
   (setq timestamp (format-time-string "(%d-%b-%y)"))
   (insert (format ";; jdp %s: " timestamp)))
 
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes") 
 (load-theme 'master t)
 
 (set-default-font "Nimbus Mono L Bold 14")

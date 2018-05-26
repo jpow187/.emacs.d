@@ -108,7 +108,7 @@ Turns off the beep when you press and incorrect key
 ** Theme
 
 #+BEGIN_SRC emacs-lisp 
- 
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes") 
 (load-theme 'master t)
 
 #+END_SRC
