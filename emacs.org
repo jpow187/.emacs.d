@@ -118,6 +118,9 @@ Load preferred font on startup with a specified font size
 
 #+BEGIN_SRC emacs-lisp
 (set-default-font "Nimbus Mono L Bold 14")
+(set-default 'preview-scale-function 12)
+(setq org-format-latex-option (plist-put org-format-latex-options :scale 2.0))
+
 
 #+END_SRC
 
@@ -196,11 +199,12 @@ python mode, etc. js2-mode is already really good for the syntax
 checks, so I probably don't need the jshint checks with flycheck for
 it.
 
-#+begin_src 
+#+begin_src emacs-lisp
 (use-package flycheck
   :ensure t
-  :defer 10
-  :commands flycheck-mode )
+  :defer
+  :commands 
+  flycheck-mode) 
 #+end_src
 
 ** Helm
@@ -232,12 +236,18 @@ it.
 
 #+END_SRC   
 
+** HTMLize
+#+BEGIN_SRC emacs-lisp
+(use-package htmlize
+  :ensure t)
+   
+#+END_SRC
 ** Macrostep
 
 Macrostep allows you to see what Elisp macros expand to. Learned about
 it from the [[https://www.youtube.com/watch?v%3D2TSKxxYEbII][package highlight talk for use-package]].
 
-#+begin_src 
+#+begin_src emacs-lisp 
 (use-package macrostep
   :ensure t
   :bind ("C-h e" . macrostep-expand)
@@ -245,7 +255,7 @@ it from the [[https://www.youtube.com/watch?v%3D2TSKxxYEbII][package highlight t
 #+end_src
 
 ** Magit
-
+ 
 A great interface for git projects. It's much more pleasant to use
 than the git interface on the command line. Use an easy keybinding to
 access magit.
@@ -439,6 +449,15 @@ I've had issues with getting BiBTeX to work correctly with the LaTeX exporter fo
   (which-key-mode))
 #+END_SRC
 
+** yassnippet
+#+BEGIN_SRC 
+(use-package yasnippet
+  :ensure t
+  :config (add-to-list 'load-path "/home/jordan/.emacs.d/elpa/yasnippet/snippets")
+)
+   
+#+END_SRC
+
 * Misc
 ** Display Time
 
@@ -460,7 +479,7 @@ characters.
 
 ** Custom Var doc
 
-This section will create a custom file "custom.el" that will store custom variables defined by the user. 
+This section will create a custom file "custom.el" that will store custom variables defined by thel user. 
 
 
 #+begin_src emacs-lisp
@@ -470,14 +489,14 @@ This section will create a custom file "custom.el" that will store custom variab
  
 * Language Agnostic
 ** C/C++
-*** Keybindings
+
 #+BEGIN_SRC emacs-lisp
 (use-package c++-mode
   :diminish
-  :bind
-       (("<f5>" . recompile)
-        ("<f4>" . compile)))
-		
+  :bind 
+(("<f5>" . recompile)
+   ("<f4>" . compile))
+)
 #+END_SRC
 
 ** Lisp 
