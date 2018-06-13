@@ -273,7 +273,7 @@ Macrostep allows you to see what Elisp macros expand to. Learned about
 it from the [[https://www.youtube.com/watch?v%3D2TSKxxYEbII][package highlight talk for use-package]].
 
 #+begin_src emacs-lisp 
-(use-package macrostlep
+(use-package macrostep
   :ensure t
   :bind ("C-h e" . macrostep-expand)
         ("C-h c" . macrostep-collapse))
