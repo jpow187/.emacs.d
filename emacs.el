@@ -34,6 +34,8 @@
 (load-theme 'master t)
 
 (set-default-font "Nimbus Mono L Bold 14")
+(set-default 'preview-scale-function 12)
+(setq org-format-latex-option (plist-put org-format-latex-options :scale 2.0))
 
 (column-number-mode 1)
 (global-linum-mode 0)
@@ -55,6 +57,29 @@
       (global-set-key [remap other-window] 'ace-window)
 ))
 
+(use-package company
+  :ensure t
+  :config
+  (setq company-idle-delay 0)
+  (setq company-minimum-prefix-length 3)
+  (global-company-mode t)
+)
+
+(use-package company-irony
+  :ensure t
+  :config 
+  (add-to-list 'company-backends 'company-irony)
+
+)
+
+(use-package irony
+  :ensure t
+  :config
+  (add-hook 'c++-mode-hook 'irony-mode)
+  (add-hook 'c-mode-hook 'irony-mode)
+  (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
+)
+
 (use-package evil
   :ensure t
   :config
@@ -67,6 +92,12 @@
    ("C-z" . undo-tree-undo))
   :init
   (global-undo-tree-mode))
+
+(use-package flycheck
+  :ensure t
+  :defer
+  :commands 
+  flycheck-mode)
 
 (use-package helm
   :ensure t
@@ -90,6 +121,14 @@
          ("C-`" . helm-resume)
          ("M-x" . helm-M-x)
          ("C-x C-f" . helm-find-files)))
+
+(use-package htmlize
+  :ensure t)
+
+(use-package macrostep
+  :ensure t
+  :bind ("C-h e" . macrostep-expand)
+        ("C-h c" . macrostep-collapse))
 
 (use-package org
   :ensure t
@@ -156,14 +195,22 @@
   :config
   (which-key-mode))
 
+(use-package yasnippet
+  :ensure t
+  :init (yas-global-mode 1))
+
+(use-package yasnippet-snippets
+  :ensure t)
+
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file)
 
 (use-package c++-mode
   :diminish
-  :bind
-       (("<f5>" . recompile)
-        ("<f4>" . compile)))
+  :bind 
+(("<f5>" . recompile)
+   ("<f4>" . compile))
+)
 
 (use-package emacs-lisp-mode
    :bind 
@@ -173,3 +220,5 @@
   :ensure t
   :config
   (mode-icons-mode t))
+
+

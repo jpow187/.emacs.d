@@ -543,3 +543,8 @@ This section will create a custom file "custom.el" that will store custom variab
   (mode-icons-mode t))
 #+END_SRC
 
+* KeyBindings
+#+BEGIN_SRC emacs-lisp
+
+
+#+END_SRC

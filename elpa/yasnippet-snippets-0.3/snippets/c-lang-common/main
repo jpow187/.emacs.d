@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: main
+# key: main
+# --
+`(progn (goto-char (point-at-bol)) (unless (re-search-forward
+"^int" nil 'no-errer) "int "))
+`main(${1:int argc, char* argv[]}) {
+    $0
+    return 0;
+}

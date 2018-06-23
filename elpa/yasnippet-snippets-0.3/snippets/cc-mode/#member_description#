@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+#cotributor: Henrique Jung <henriquenj@gmail.com>
+#name: Member description
+#key: !<
+#group: doxygen
+# --
+/*!< ${1:Detailed description after the member} */
+
+?:
